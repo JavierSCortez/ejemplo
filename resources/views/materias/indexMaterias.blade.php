@@ -2,6 +2,6 @@
 
 @section('content')
 <h1>
-  Listado de Materias
+  Materias
 </h1>
 @endsection

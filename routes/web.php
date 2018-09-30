@@ -15,29 +15,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/inicio', function () {
     return view('inicio');
 });
 
-Auth::routes();
+Route::resource('materia', 'MateriaController');
 
-Route::get('/materias', 'MateriaController@index');
+/*Route::get('/materias', 'MateriaController@index');
 Route::get('/materia/listado', 'MateriaController@index');
 Route::get('/materia/create', 'MateriaController@create');
 Route::get('/materia/show/{id}', 'MateriaController@show');
 Route::get('/materia/edit/{id}', 'MateriaController@edit');
-Route::get('/materia/update', 'MateriaController@update');
-Route::resource('materia', 'MateriaController');
+Route::get('/materia/update', 'MateriaController@update');*/
 
-
+/*
 Route::get('/alumnos', 'AlumnoController@index');
 Route::get('/dependencias', 'DependenciaController@index');
 Route::get('/empleados', 'EmpleadoController@index');
 Route::get('/roles', 'RolController@index');
 
-//Route::get('/home', 'HomeController@index')->name('home');
 
-/*
 Primer opcion para rutas "no se recomienda su uso"
 Route::get('/materias', function(){
   return 'Ruta: Materias';

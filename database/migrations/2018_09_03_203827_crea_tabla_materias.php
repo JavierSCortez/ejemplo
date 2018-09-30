@@ -11,15 +11,13 @@ class CreaTablaMaterias extends Migration
      *
      * @return void
      */
-    public function up()
+      public function up()
     {
         Schema::create('materias', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
             $table->string('materia');
-            $table->string('crn', 20);
-            $table->string('calendario', 6);
-            $table->time('hora_inicio');
+            $table->string('seccion', 5);
+            $table->string('crn', 10);
             $table->string('salon');
             $table->timestamps();
         });

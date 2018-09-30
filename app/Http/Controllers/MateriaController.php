@@ -14,7 +14,8 @@ class MateriaController extends Controller
      */
     public function index()
     {
-        return view('materias.indexMaterias');
+      $materias = Materia::all();  
+      return view('materias.indexMaterias', compact('materias'));
     }
 
     /**
@@ -39,6 +40,15 @@ class MateriaController extends Controller
         // $materia = $_POST['materia'], con request seria $materia = $request -> $materia;
         // insertar a base de datos
         // redireccionar
+      $materia = new Materia();
+      $materia->materia = $request->input('materia');
+      $materia->seccion = $request->input('seccion');
+      $materia->crn = $request->input('crn');
+      $materia->salon = $request->input('salon');
+      $materia->save();
+      
+      return redirect()->route('materia.index');
+      //dd($request->all());
     }
 
     /**

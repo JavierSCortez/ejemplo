@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "javiersc/asistencia",
+    "description": "Sistema para el control de asistencias.",
+    "keywords": ["administracion", "rh", "profesores", "alumnos"],
     "license": "MIT",
     "type": "project",
     "require": {

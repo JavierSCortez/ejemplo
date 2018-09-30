@@ -24,6 +24,7 @@ Route::get('/inicio', function () {
 });
 
 Route::resource('materia', 'MateriaController');
+Route::resource('alumno', 'AlumnoController');
 
 /*Route::get('/materias', 'MateriaController@index');
 Route::get('/materia/listado', 'MateriaController@index');

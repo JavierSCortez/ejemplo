@@ -14,7 +14,8 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        return view('alumnos.indexAlumnos');
+        $alumnos = Alumno::all();
+        return view('alumnos.indexAlumnos', compact('alumnos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        //
+        return view('alumnos.formAlumnos');
     }
 
     /**
@@ -35,7 +36,13 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $alumno = new Alumno();
+        $alumno->nombre = $request->input('nombre');
+        $alumno->codigo = $request->input('codigo');
+        $alumno->carrera = $request->input('carrera');
+        $alumno->save();
+
+        return redirect()->route('alumno.index');
     }
 
     /**

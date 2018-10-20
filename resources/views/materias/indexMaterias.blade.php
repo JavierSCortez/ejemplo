@@ -27,17 +27,17 @@
                         <th>Sección</th>
                         <th>CRN</th>
                         <th>Salón</th>
-                        <th>Calendario</th>
+                        <th>Usuario</th>
                     </thead>
                     <tbody>
                         @foreach($materias as $materia)
                             <tr>
-                                <td>{{ $materia->id }}</td>
+                                <td> <a class="btn btn-sm btn-info" href="{{route('materia.show', $materia->id)}}">{{ $materia->id }}</a></td>
                                 <td>{{ $materia->materia }}</td>
                                 <td>{{ $materia->seccion }}</td>
                                 <td>{{ $materia->crn }}</td>
                                 <td>{{ $materia->salon }}</td>
-                                <td>{{-- $materia->calendario --}}</td>
+                                <td>{{ !empty($materia->user) ? $materia->user->nombre : '' }}</td>
                             </tr>
                         @endforeach
                     </tbody>

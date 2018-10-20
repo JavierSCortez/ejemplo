@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Alumno;
+use App\User;
 use Illuminate\Http\Request;
-use App\Materia;
 
-class AlumnoController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        $alumnos = Alumno::all();
-        return view('alumnos.indexAlumnos', compact('alumnos'));
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        return view('alumnos.formAlumnos');
+        //
     }
 
     /**
@@ -37,34 +35,27 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-        $alumno = new Alumno();
-        $alumno->nombre = $request->input('nombre');
-        $alumno->codigo = $request->input('codigo');
-        $alumno->carrera = $request->input('carrera');
-        $alumno->save();
-
-        return redirect()->route('alumno.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Alumno  $alumno
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Alumno $alumno)
+    public function show(User $user)
     {
-        $materias = Materia::all();
-        return view('alumnos.showAlumno', compact('alumno', 'materias'));
+        return view('usuarios.user.Show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Alumno  $alumno
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Alumno $alumno)
+    public function edit(User $user)
     {
         //
     }
@@ -73,10 +64,10 @@ class AlumnoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Alumno  $alumno
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Alumno $alumno)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -84,10 +75,10 @@ class AlumnoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Alumno  $alumno
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Alumno $alumno)
+    public function destroy(User $user)
     {
         //
     }
